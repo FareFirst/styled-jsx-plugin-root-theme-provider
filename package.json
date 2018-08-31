@@ -1,0 +1,36 @@
+{
+  "name": "styled-jsx-plugin-root-theme-provider",
+  "version": "1.0.0",
+  "description": "Plug-in to use :root selector power to build themed Styled-JSX",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nawaf331/styled-jsx-plugin-root-theme-provider.git"
+  },
+  "keywords": [
+    "styled-jsx-plugin",
+    "styled-jsx",
+    "postcss",
+    "theme-provider"
+  ],
+  "author": "Nawaf Abdul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nawaf331/styled-jsx-plugin-root-theme-provider/issues"
+  },
+  "homepage": "https://github.com/nawaf331/styled-jsx-plugin-root-theme-provider#readme",
+  "dependencies": {
+    "deasync": "^0.1.12",
+    "postcss": "^6.0.13",
+    "postcss-load-plugins": "^2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-nested": "^2.1.2"
+  }
+}

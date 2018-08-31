@@ -1,25 +1,18 @@
 const assert = require('assert')
 const plugin = require('./')
 
-describe('styled-jsx-plugin-postcss', () => {
+describe('styled-jsx-plugin-root-theme-provider', () => {
   it('applies plugins', () => {
     assert.equal(
-      plugin('p { img { display: block} color: color(red a(90%)) }'),
-      'p { color: rgba(255, 0, 0, 0.9); } p img { display: block}'
+      plugin('.selector {background: var(--red)}'),
+      '.selector {background: var(--red);background: var(--red)}'
     )
   })
 
-  it('works with placeholders', () => {
+  it('applies theme', () => {
     assert.equal(
-      plugin('p { img { display: block } color: %%styled-jsx-placeholder-0%%; } %%styled-jsx-placeholder-1%%'),
-      'p { color: %%styled-jsx-placeholder-0%%; } p img { display: block } %%styled-jsx-placeholder-1%%'
-    )
-  })
-
-  it('works with @import', () => {
-    assert.equal(
-      plugin('@import "./fixture.css"; p { color: red }'),
-      'div { color: red; } p { color: red }'
+      plugin('.selector {background: var(--red)}', { themeFilePath: './fixture-theme.css' }),
+      '.selector {background: red;background: var(--red)}'
     )
   })
 })

@@ -50,13 +50,6 @@ babel configuration:
 `styled-jsx-plugin-root-theme-provider` uses `styled-jsx`'s plugin system which is supported
 from version 2. Read more on their repository for further info.
 
-## Plugins
-
-`styled-jsx-plugin-postcss` uses
-[`postcss-load-plugins`](https://www.npmjs.com/package/postcss-load-plugins)
-therefore you may want to refer to their docs to learn more about
-[adding plugins](https://www.npmjs.com/package/postcss-load-plugins#packagejson).
-
 ## License
 
 MIT

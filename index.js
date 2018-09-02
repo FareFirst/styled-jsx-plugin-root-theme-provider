@@ -35,8 +35,14 @@ module.exports = (css, options) => {
     throw processedCss
   }
 
-  return removeTheme(processedCss)
+  const result = removeTheme(processedCss)
     .replace(/\/\*%%styled-jsx-placeholder-(\d+)%%\*\//g, (_, id) =>
       `%%styled-jsx-placeholder-${id}%%`
-    )
+    );
+
+  if (options.enableLog) {
+    console.log('START', css, '-------------', result, 'END');
+  }
+
+  return result;
 }

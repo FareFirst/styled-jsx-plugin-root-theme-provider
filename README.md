@@ -100,6 +100,12 @@ In browser this css will be translated to
 
 [styled-jsx-plugin-root-theme-provider](https://github.com/nawaf331/styled-jsx-plugin-root-theme-provider) uses [styled-jsx](https://github.com/zeit/styled-jsx#css-preprocessing-via-plugins)'s plugin system which is supported from version 2. Read more on their repository for further info.
 
+## Options
+
+**themeFilePath [Optional]** : To configure theme css file path
+**postcssPresetEnvOptions [Optional]** : To configure postcss-preset-env
+
+#### Default stage for postcss-preset-env is 0
 
 ## Contributing
 

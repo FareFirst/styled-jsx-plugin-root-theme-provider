@@ -1,6 +1,7 @@
 const loopWhile = require('deasync').loopWhile
+const postcss = require('postcss')
 const postcssPresetEnv = require('postcss-preset-env')
-const themeProcessor = require('./theme-processor')
+const { addTheme, removeTheme } = require('./theme-processor')
 
 module.exports = (css, options) => {
   options = options || {}
@@ -10,10 +11,7 @@ module.exports = (css, options) => {
       `/*%%styled-jsx-placeholder-${id}%%*/`
     )
 
-  const {
-    namespacedTheme,
-    cssToBeProcessed
-  } = themeProcessor(cssWithPlaceholders, options);
+  const cssToBeProcessed = addTheme(cssWithPlaceholders, options);
 
   let processedCss
   let wait = true
@@ -23,7 +21,11 @@ module.exports = (css, options) => {
     wait = false
   }
 
-  postcssPresetEnv.process(cssToBeProcessed, { from: undefined })
+  const postcssPresetEnvOptions = options.postcssPresetEnvOptions || {};
+
+  postcss([
+    postcssPresetEnv(Object.assign({}, { stage: 0 }, postcssPresetEnvOptions))
+  ]).process(cssToBeProcessed, { from: false })
     .then(result => result.css)
     .then(resolved)
     .catch(resolved)
@@ -33,8 +35,7 @@ module.exports = (css, options) => {
     throw processedCss
   }
 
-  return processedCss
-    .replace(namespacedTheme, '')
+  return removeTheme(processedCss)
     .replace(/\/\*%%styled-jsx-placeholder-(\d+)%%\*\//g, (_, id) =>
       `%%styled-jsx-placeholder-${id}%%`
     )

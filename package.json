@@ -1,6 +1,6 @@
 {
   "name": "styled-jsx-plugin-root-theme-provider",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Plugin to use `var` and `:root` css power to build themed styled-jsx with older browser support",
   "main": "index.js",
   "scripts": {

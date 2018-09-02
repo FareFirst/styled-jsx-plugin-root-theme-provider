@@ -1,6 +1,6 @@
 # styled-jsx-plugin-root-theme-provider
 
-[![Build Status](https://travis-ci.org/FareFirst/styled-jsx-plugin-root-theme-provider.svg?branch=master)](https://travis-ci.org/nawaf331/styled-jsx-plugin-root-theme-provider)
+[![Build Status](https://travis-ci.org/FareFirst/styled-jsx-plugin-root-theme-provider.svg?branch=master)](https://travis-ci.org/FareFirst/styled-jsx-plugin-root-theme-provider)
 [![npm](https://img.shields.io/npm/v/styled-jsx-plugin-root-theme-provider.svg)](https://www.npmjs.com/package/styled-jsx-plugin-root-theme-provider)
 
 

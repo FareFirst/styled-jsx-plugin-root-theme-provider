@@ -106,7 +106,3 @@ In browser this css will be translated to
 PR's are welcome!
 
 Thanks to all [the contributors](https://github.com/nawaf331/styled-jsx-plugin-root-theme-provider/graphs/contributors)!
-
-## License
-
-MIT

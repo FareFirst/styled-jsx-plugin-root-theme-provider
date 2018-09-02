@@ -1,3 +1,5 @@
 :root {
   --red: red;
 }
+
+@custom-media --small-viewport (max-width: 30em);

@@ -1,14 +1,12 @@
 const loopWhile = require('deasync').loopWhile
 const fs = require('fs')
 
-module.exports = (css, options) => {
-  const NAMESPACE = '/* ##styled-jsx-plugin-ff-theme## */'
+const NAMESPACE = '/* ##styled-jsx-plugin-ff-theme## */'
+const NAMESPACE_REGEX = /\/\* ##styled-jsx-plugin-ff-theme## \*\/[^]*\/\* ##styled-jsx-plugin-ff-theme## \*\//
 
+const addTheme = (css, options) => {
   const { themeFilePath } = options
-  if (!themeFilePath) return {
-    namespacedTheme: NAMESPACE,
-    cssToBeProcessed: `${NAMESPACE}${css}`
-  }
+  if (!themeFilePath) return css;
 
   let theme
   let wait = true
@@ -24,10 +22,13 @@ module.exports = (css, options) => {
   });
   loopWhile(() => wait)
 
-  const namespacedTheme = `${NAMESPACE}${theme}${NAMESPACE}`
-  const cssToBeProcessed = `${namespacedTheme}${css}`
-  return {
-    namespacedTheme,
-    cssToBeProcessed
-  }
+  const cssToBeProcessed = `${NAMESPACE}${theme}${NAMESPACE}${css}`
+  return cssToBeProcessed;
+}
+
+const removeTheme = css => css.replace(NAMESPACE_REGEX, '');
+
+module.exports = {
+  addTheme,
+  removeTheme
 }

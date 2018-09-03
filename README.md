@@ -103,6 +103,7 @@ In browser this css will be translated to
 ## Options
 
 **themeFilePath [Optional]** : To configure theme css file path
+
 **postcssPresetEnvOptions [Optional]** : To configure postcss-preset-env
 
 #### Default stage for postcss-preset-env is 0

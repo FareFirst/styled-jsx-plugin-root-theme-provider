@@ -23,6 +23,13 @@ describe('styled-jsx-plugin-root-theme-provider', () => {
     )
   })
 
+  it('applies color-mod', () => {
+    assert.equal(
+      plugin('b { color: color-mod(black a(90%));}'),
+      'b { color: rgba(0, 0, 0, 0.9);}'
+    )
+  })
+
   it('applies postcssPresetEnvOptions', () => {
     assert.equal(
       plugin('@media (--small-viewport) {b {font-size: 1em;}}', {

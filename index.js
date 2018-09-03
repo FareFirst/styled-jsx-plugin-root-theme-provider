@@ -1,6 +1,7 @@
 const loopWhile = require('deasync').loopWhile
 const postcss = require('postcss')
 const postcssPresetEnv = require('postcss-preset-env')
+const postcssColorMod = require('postcss-color-mod-function')
 const { addTheme, removeTheme } = require('./theme-processor')
 
 module.exports = (css, options) => {
@@ -24,7 +25,8 @@ module.exports = (css, options) => {
   const postcssPresetEnvOptions = options.postcssPresetEnvOptions || {};
 
   postcss([
-    postcssPresetEnv(Object.assign({}, { stage: 0 }, postcssPresetEnvOptions))
+    postcssPresetEnv(Object.assign({}, { stage: 0 }, postcssPresetEnvOptions)),
+    postcssColorMod()
   ]).process(cssToBeProcessed, { from: false })
     .then(result => result.css)
     .then(resolved)

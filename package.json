@@ -1,6 +1,6 @@
 {
   "name": "styled-jsx-plugin-root-theme-provider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Plugin to use `var` and `:root` css power to build themed styled-jsx with older browser support",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "email": "vv@farefirst.com",
     "url": "https://www.farefirst.com"
   },
-  "license": "GNU GPLv3",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/FareFirst/styled-jsx-plugin-root-theme-provider/issues"
   },
@@ -29,6 +29,7 @@
   "dependencies": {
     "deasync": "^0.1.13",
     "postcss": "^7.0.2",
+    "postcss-color-mod-function": "^2.4.3",
     "postcss-preset-env": "^5.3.0"
   },
   "devDependencies": {

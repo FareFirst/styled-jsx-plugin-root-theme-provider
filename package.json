@@ -1,6 +1,6 @@
 {
   "name": "styled-jsx-plugin-root-theme-provider",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Plugin to use `var` and `:root` css power to build themed styled-jsx with older browser support",
   "main": "index.js",
   "scripts": {
@@ -27,10 +27,9 @@
   },
   "homepage": "https://github.com/FareFirst/styled-jsx-plugin-root-theme-provider#readme",
   "dependencies": {
-    "deasync": "^0.1.13",
-    "postcss": "^7.0.2",
-    "postcss-color-mod-function": "^2.4.3",
-    "postcss-preset-env": "^5.3.0"
+    "deasync": "^0.1.14",
+    "postcss": "^7.0.7",
+    "postcss-preset-env": "^6.5.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0"

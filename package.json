@@ -28,7 +28,7 @@
   "homepage": "https://github.com/FareFirst/styled-jsx-plugin-root-theme-provider#readme",
   "dependencies": {
     "deasync": "^0.1.15",
-    "postcss": "^7.0.17",
+    "postcss": "^8.2.10",
     "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
